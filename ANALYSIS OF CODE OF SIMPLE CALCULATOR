@@ -1,0 +1,91 @@
+### Code Structure
+
+1. **Include Directives**
+2. **Main Function**
+3. **Variable Declarations**
+4. **User Input**
+5. **Operation Selection**
+6. **Conditional Statements**
+7. **Output**
+8. **Return Statement**
+
+### Detailed Documentation
+
+#### 1. Include Directives
+```c
+#include <stdio.h>
+#include <stdlib.h>
+```
+- **`#include <stdio.h>`**: This directive includes the Standard Input Output library, which is necessary for using functions like `printf` and `scanf`.
+- **`#include <stdlib.h>`**: This directive includes the Standard Library, but it is not used in this specific code. It is often included for functions like memory allocation, process control, etc.
+
+#### 2. Main Function
+```c
+int main()
+```
+- This is the entry point of the program. The execution of the program starts here. The `int` return type indicates that the function will return an integer value.
+
+#### 3. Variable Declarations
+```c
+float num1, num2;
+char Action;
+```
+- **`float num1, num2;`**: Two floating-point variables (`num1` and `num2`) are declared to store the numbers input by the user.
+- **`char Action;`**: A character variable (`Action`) is declared to store the arithmetic operation the user wants to perform.
+
+#### 4. User Input
+```c
+printf("Enter the FIRST number: \n");
+scanf("%f", &num1);
+printf("Enter the SECOND number: \n");
+scanf("%f", &num2);
+```
+- **`printf`** statements prompt the user to enter two numbers.
+- **`scanf`** statements read the user input and store it in `num1` and `num2`. The format specifier `%f` is used for reading floating-point numbers.
+
+#### 5. Operation Selection
+```c
+printf("Choose which action you want to perform (+, -, /, *): \n");
+scanf(" %c", &Action);
+```
+- The user is prompted to choose an arithmetic operation.
+- The `scanf` function reads a character input for the chosen operation. The space before `%c` ensures that any leftover newline characters from previous input are ignored.
+
+#### 6. Conditional Statements
+```c
+if (Action == '+') { /* Addition */ }
+else if (Action == '-') { /* Subtraction */ }
+else if (Action == '/') { /* Division */ }
+else if (Action == '*') { /* Multiplication */ }
+else { /* Invalid action */ }
+```
+- A series of `if`, `else if`, and `else` statements are used to determine which arithmetic operation to perform based on the value of `Action`.
+- For each operation:
+  - **Addition**: If `Action` is `+`, it calculates the sum of `num1` and `num2`.
+  - **Subtraction**: If `Action` is `-`, it calculates the difference.
+  - **Division**: If `Action` is `/`, it calculates the quotient. (Note: There's no check for division by zero here, which could lead to runtime errors.)
+  - **Multiplication**: If `Action` is `*`, it calculates the product.
+- If the action is not recognized, an error message is printed.
+
+#### 7. Output
+```c
+printf("Sum: %f\n", sum);
+printf("Subtraction: %f\n", sub);
+printf("Division: %f\n", div);
+printf("Multiplication: %f\n", mult);
+```
+- For each arithmetic operation, the result is printed using `printf`. The format specifier `%f` is used for displaying floating-point results.
+
+#### 8. Return Statement
+```c
+return 0;
+```
+- This indicates that the program has terminated successfully. Returning `0` from `main` is a common convention to indicate success.
+
+### Summary
+This simple calculator program effectively demonstrates basic input/output operations, conditionals, and arithmetic in C. However, there are areas for improvement, such as:
+- Adding error handling for division by zero.
+- Implementing a loop to allow multiple calculations without restarting the program.
+- Enhancing input validation to ensure the user inputs valid numbers and operations.
+
+Overall, the code serves as a good foundation for understanding basic C programming concepts related to user input and conditional logic.
